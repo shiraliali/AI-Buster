@@ -1,7 +1,7 @@
 
 #  AI Buster
 
-AI Buster is a Free & Open source bot that detects and scores AI generated codes.
+AI Buster is a Free & Open source bot that detects generated codes by AI models.
 
 
 
@@ -26,5 +26,5 @@ AI Buster using an api endpoint to recive analysis requests and return response 
 Request should send as Form data and the name of property that is sent must be `data`. It's accessable as `$_POST['data']` in api core.
 
 ### What is the analysis endpoint?
-All requestes should send to `/api/analyze`.
+All requests should send to `/api/analyze`.
     
