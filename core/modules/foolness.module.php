@@ -211,6 +211,29 @@ function Signature($data,  $density)
 
 
 
+function HumanLikeNames($data, $density)
+{
+
+    $score = 0;
+
+    preg_match_all(DEPASCAL, $data, $detect);
+
+    if (!empty($detect[0])) {
+        $score += -SEVERE;
+    }
+
+    if (count($detect[0]) > floor(1 * $density)) {
+        $score += -MIDDLE;
+    }
+
+    if (count($detect[0]) >= floor(3 * $density)) {
+        $score = -SEVERE * 2;
+    }
+
+    return $score;
+}
+
+
 
 
 function PerLang($data,  $density)
