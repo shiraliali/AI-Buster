@@ -12,6 +12,7 @@ define('FOOLNAMEDEC', '/[A-Z]\w+/m');
 define('DECORATION', '/\b(import|using|const)\s+[\w.]+;|var\s+\w+\s*=|^\s*\$+\w+/m');
 define('FOOLNAME', '/(?:\/\/|#|\/\*|\b(echo|print|console\.log)\b)[^"]*"([^"]*)"/m');
 define("DECDASH", '/\b[A-Za-z0-9]+-[A-Za-z0-9]+\b/m');
+define("DEPASCAL", '/"[^"]+?[A-Z][^"]+?"|\b[A-Z][a-z]+\b[A-Z][a-z]+\b/m');
 define('SIGNTURE', '/_\w+/m');
 define('REDUNDANCY', '/(\b[A-Za-z_]+\s*\([^)]*\))\s*\1/m');
 define('PERLANG', '/[\#]\s*([^\n]*[\u0600-\u06FF]+)\s*|[\/]{2}\s*([^\n]*[\u0600-\u06FF]+)\s*/u');
