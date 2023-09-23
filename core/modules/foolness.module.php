@@ -195,11 +195,11 @@ function Signature($data,  $density)
     preg_match_all(SIGNTURE, $data, $detect);
 
     if (!empty($detect[0])) {
-        $score += SEVERE;
+        $score += -SEVERE;
     }
 
     if (count($detect[0]) > floor(1 * $density)) {
-        $score += NEGLIGIBLE;
+        $score += -NEGLIGIBLE;
     }
 
     if (count($detect[0]) >= floor(3 * $density)) {
