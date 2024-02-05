@@ -1,7 +1,7 @@
 
 #  AI Buster
 
-AI Buster is a Free & Open source bot that detects generated codes by AI models.
+AI Buster is a Free & Open source tool that detects generated codes by AI models.
 
 
 
