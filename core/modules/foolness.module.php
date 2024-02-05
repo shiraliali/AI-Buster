@@ -219,15 +219,15 @@ function HumanLikeNames($data, $density)
     preg_match_all(DEPASCAL, $data, $detect);
 
     if (!empty($detect[0])) {
-        $score += -SEVERE;
+        $score += -SEVERE * count($detect[0]) * 3;
     }
 
-    if (count($detect[0]) > floor(1 * $density)) {
-        $score += -MIDDLE;
+    if (count($detect[0]) > floor(4 * $density)) {
+        $score += -MIDDLE * count($detect[0]);
     }
 
-    if (count($detect[0]) >= floor(3 * $density)) {
-        $score = -SEVERE * 2;
+    if (count($detect[0]) >= floor(8 * $density)) {
+        $score = -SEVERE * count($detect[0]);
     }
 
     return $score;
