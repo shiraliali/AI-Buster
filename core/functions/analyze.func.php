@@ -67,6 +67,7 @@ function MessureFoolness($data)
     $result += DecorationDash($data, $density);
     usleep(MessureSpaghetti($data));
     $result += FoolMess($data, $density);
+    $result += HumanLikeNames($data, $density);
     $result += Mess($data,  $density);
     $result += MesSTA($data,  $density);
     $result += MesEn($data,  $density);
