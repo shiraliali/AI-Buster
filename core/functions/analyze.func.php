@@ -30,7 +30,7 @@ function MessureDensity($data)
 
 
 
-function MessureSpaggeti($data)
+function MessureSpaghetti($data)
 {
     $spaceHunt = preg_replace(SPACEHUNT, ' ', $data);
     $spaggetiLength = strlen($spaceHunt);
@@ -45,12 +45,12 @@ function MessureFoolness($data)
 {
 
     if (!DetectCode($data)) {
-        echo json_encode(array("analyze_result" => GenerateResultMessage(1)));
+        echo json_encode(array("analyze_result" => GenerateResultMessage(1), "analyze_score" => "NA/100"));
         exit;
     }
 
     if (strlen($data) < 30) {
-        echo json_encode(array("analyze_result" => GenerateResultMessage(2)));
+        echo json_encode(array("analyze_result" => GenerateResultMessage(2), "analyze_score" => "0/100"));
         exit;
     }
 
@@ -65,7 +65,7 @@ function MessureFoolness($data)
     $result += PerLang($data,  $density);
     $result += Decoration($data,  $density);
     $result += DecorationDash($data, $density);
-    usleep(MessureSpaggeti($data));
+    usleep(MessureSpaghetti($data));
     $result += FoolMess($data, $density);
     $result += Mess($data,  $density);
     $result += MesSTA($data,  $density);
@@ -83,7 +83,7 @@ function MessureFoolness($data)
     }
 
     if (ceil($finalMessuerment) <= 0) {
-        echo json_encode(array("analyze_result" => GenerateResultMessage(0)));
+        echo json_encode(array("analyze_result" => GenerateResultMessage(0), "analyze_score" => "0/100"));
         exit;
     }
 
